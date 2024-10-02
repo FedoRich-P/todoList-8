@@ -3,7 +3,6 @@ import {ChangeEvent} from "react";
 import {AddItemForm} from "./AddItemForm";
 import {EditableSpan} from "./EditableSpan";
 import {Button, Checkbox, Grid2, List, ListItem} from "@mui/material";
-import {ThemeProvider} from '@mui/material/styles';
 
 type PropsType = {
     title: string
@@ -49,8 +48,6 @@ export const Todolist = (props: PropsType) => {
     const updateTodolistHandler = (title: string) => {
         updateTodolist(props.todolistId, title)
     }
-
-    // "homepage": "https://FedoRich-P.github.io/newTodoList",
 
     return (
 

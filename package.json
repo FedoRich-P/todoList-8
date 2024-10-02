@@ -1,6 +1,7 @@
 {
   "name": "1-lesson",
   "version": "0.1.0",
+  "homepage": "https://FedoRich-P.github.io/todoList-8/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.3",
@@ -15,6 +16,7 @@
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "@types/uuid": "^9.0.8",
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -24,6 +26,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

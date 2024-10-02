@@ -3,18 +3,7 @@ import {Todolist} from "./Todolist";
 import React, {useState} from "react";
 import {v1} from "uuid";
 import {AddItemForm} from "./AddItemForm";
-import {
-    AppBar,
-    Button,
-    Container,
-    createTheme,
-    CssBaseline,
-    Grid2,
-    IconButton,
-    Paper,
-    Switch,
-    Toolbar
-} from "@mui/material";
+import {AppBar, Container, createTheme, CssBaseline, Grid2, IconButton, Paper, Switch, Toolbar} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu'
 import {MenuButton} from "./components/MenuButton";
 import {ThemeProvider} from "@mui/material/styles";
@@ -29,7 +18,7 @@ export type TaskType = {
 
 export type FilterValuesType = 'all' | 'active' | 'completed'
 
-type TodolistType = {
+export type TodolistType = {
     id: string
     title: string
     filter: FilterValuesType
@@ -53,7 +42,7 @@ function App() {
     })
 
     const changeModeHandler = () => {
-        setThemeMode(themeMode == 'light' ? 'dark' : 'light')
+        setThemeMode(themeMode === 'light' ? 'dark' : 'light')
     }
 
 
@@ -75,6 +64,7 @@ function App() {
             {id: v1(), title: 'GraphQL', isDone: false},
         ],
     })
+
     const removeTask = (taskId: string, todolistId: string) => {
         const newTodolistTasks = {...tasks, [todolistId]: tasks[todolistId].filter(t => t.id !== taskId)}
         setTasks(newTodolistTasks)
